@@ -31,7 +31,7 @@ of<T>(...args: (SchedulerLike | T)[]): Observable<T>
 
 ## 示例
 
-### 发射一个序列
+### 投射一个序列
 
 ```ts
 import { of } from 'rxjs';
@@ -48,7 +48,7 @@ of(10, 20, 30).subscribe(
 // the end
 ```
 
-### 发射一个数组
+### 投射一个数组
 
 ```ts
 import { of } from 'rxjs';

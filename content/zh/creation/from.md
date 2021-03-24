@@ -14,8 +14,8 @@ category: '创建操作符'
 ## 说明
 
 - 将 Promise 转化为 Observable 对象
-- 将数组或迭代器 <ruby>发射<rp>（</rp><rt>Emit</rt><rp>）</rp></ruby> 为一个序列
-- 将一个字符串发射为一个字符序列
+- 将数组或迭代器 <ruby>投射<rp>（</rp><rt>Emit</rt><rp>）</rp></ruby> 为一个序列
+- 将一个字符串投射为一个字符序列
 
 ## 用法
 

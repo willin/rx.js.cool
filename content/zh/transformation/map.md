@@ -7,7 +7,7 @@ category: '转化操作符'
 
 <alert>
 
-将源 Observable 发射的每个值应用到给出的 `project` 方法，并将结果值发射为一个 `Observable` 对象。
+将源 Observable 投射的每个值应用到给出的 `project` 方法，并将结果值投射为一个 `Observable` 对象。
 
 </alert>
 
@@ -29,7 +29,7 @@ map<T, R>(
 
 | 参数    | 说明                                                            |
 | ------- | --------------------------------------------------------------- |
-| project | `value`：源 Observable 发射的每个值。 `index`： 从 0 开始的索引 |
+| project | `value`：源 Observable 投射的每个值。 `index`： 从 0 开始的索引 |
 | thisArg | 可选。默认值：`undefined`，指定 `project` 方法的作用域          |
 
 ### 返回
