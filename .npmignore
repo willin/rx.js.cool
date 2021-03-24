@@ -1,0 +1,12 @@
+node_modules
+*.iml
+.idea
+.nuxt
+.DS_Store
+coverage
+dist
+sw.*
+
+demo*
+*.log
+*.log.*
