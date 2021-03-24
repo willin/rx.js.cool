@@ -17,7 +17,7 @@ category: ''
 - fromEventPattern
 - generate
 - interval
-- of ⭐
+- [of](/creation/of) ⭐
 - range
 - throwError
 - timer

@@ -7,7 +7,7 @@ category: '创建操作符'
 
 <alert>
 
-从一个 `数组`、`类数组对象`、`Promise 对象`、`可迭代（Iterable）对象`或`类可观察对象`创建一个 `Observable`对象。
+从一个 `数组`、`类数组对象`、`Promise 对象`、`可迭代（Iterable）对象`或`类可观察对象`创建一个 `Observable` 对象。
 
 </alert>
 
@@ -188,3 +188,7 @@ end
 20
 30
 ```
+
+## 源码
+
+<https://github.com/ReactiveX/rxjs/blob/master/src/internal/observable/from.ts>
