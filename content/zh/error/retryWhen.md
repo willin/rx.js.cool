@@ -71,6 +71,42 @@ example.subscribe(val => console.log(val));
 
 ### 重试策略
 
+<alert>
+
+抽象出的策略方法
+
+</alert>
+
+```ts
+import { Observable, throwError, timer } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
+
+const genericRetryStrategy = ({
+  maxRetryAttempts = 3,
+  scalingDuration = 1000
+}: {
+  maxRetryAttempts?: number;
+  scalingDuration?: number;
+} = {}) => (attempts: Observable<any>): Observable<any> =>
+  attempts.pipe(
+    mergeMap((error, i) => {
+      const retryAttempt = i + 1;
+      // 如果已经达到最大尝试次数
+      if (retryAttempt > maxRetryAttempts) {
+        return throwError(error);
+      }
+      // 1s, 2s, ... 后重试
+      return timer(retryAttempt * scalingDuration);
+    })
+  );
+```
+
+下面，给出两种情况的示例。
+
+<code-group>
+
+<code-block label="当失败时重试整个 Observable 序列" active>
+
 1.当失败时重试整个 Observable 序列
 
 ```ts
@@ -132,6 +168,10 @@ error: 6
 We are done!
 6
 ```
+
+</code-block>
+
+<code-block label="当失败时，只重试前一步出错的步骤">
 
 2.当失败时，只重试前一步出错的步骤
 
@@ -213,35 +253,9 @@ We are done!
 11
 ```
 
-<alert>
+</code-block>
 
-抽象出的策略方法
-
-</alert>
-
-```ts
-import { Observable, throwError, timer } from 'rxjs';
-import { mergeMap } from 'rxjs/operators';
-
-const genericRetryStrategy = ({
-  maxRetryAttempts = 3,
-  scalingDuration = 1000
-}: {
-  maxRetryAttempts?: number;
-  scalingDuration?: number;
-} = {}) => (attempts: Observable<any>): Observable<any> =>
-  attempts.pipe(
-    mergeMap((error, i) => {
-      const retryAttempt = i + 1;
-      // 如果已经达到最大尝试次数
-      if (retryAttempt > maxRetryAttempts) {
-        return throwError(error);
-      }
-      // 1s, 2s, ... 后重试
-      return timer(retryAttempt * scalingDuration);
-    })
-  );
-```
+</code-group>
 
 ## 源码
 
