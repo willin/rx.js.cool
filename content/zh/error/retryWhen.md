@@ -213,6 +213,36 @@ We are done!
 11
 ```
 
+<alert>
+
+抽象出的策略方法
+
+</alert>
+
+```ts
+import { Observable, throwError, timer } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
+
+const genericRetryStrategy = ({
+  maxRetryAttempts = 3,
+  scalingDuration = 1000
+}: {
+  maxRetryAttempts?: number;
+  scalingDuration?: number;
+} = {}) => (attempts: Observable<any>): Observable<any> =>
+  attempts.pipe(
+    mergeMap((error, i) => {
+      const retryAttempt = i + 1;
+      // 如果已经达到最大尝试次数
+      if (retryAttempt > maxRetryAttempts) {
+        return throwError(error);
+      }
+      // 1s, 2s, ... 后重试
+      return timer(retryAttempt * scalingDuration);
+    })
+  );
+```
+
 ## 源码
 
 <https://github.com/ReactiveX/rxjs/blob/master/src/internal/operators/retryWhen.ts>
