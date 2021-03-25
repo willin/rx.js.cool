@@ -10,7 +10,7 @@ category: ''
 
 RxJS 是一个使用 <ruby>可观察<rp>（</rp><rt>Observable</rt><rp>）</rp></ruby> 序列来编写异步和 <ruby>基于事件<rp>（</rp><rt>Event-based</rt><rp>）</rp></ruby> 程序的库。
 
-它提供了一种核心类型，即[Observable](/observable)，附属类型（Observer，Scheduler，Subject）和受 `Array`（还有 map、filter、reduce、every 等） 启发的 <ruby>运算符<rp>（</rp><rt>Operators</rt><rp>）</rp></ruby>，以允许将异步事件作为集合进行处理。
+它提供了一种核心类型，即 [Observable](#)，附属类型（Observer，Scheduler，Subject）和受 `Array`（还有 map、filter、reduce、every 等） 启发的 <ruby>运算符<rp>（</rp><rt>Operators</rt><rp>）</rp></ruby>，以允许将异步事件作为集合进行处理。
 
 # 安装
 

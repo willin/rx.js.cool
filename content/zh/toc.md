@@ -57,8 +57,8 @@ category: ''
 # 异常处理 Error Handling
 
 - catchError ⭐
-- retry
-- retryWhen
+- [retry](/error/retry)
+- [retryWhen](/error/retryWhen)
 - throwIfEmpty
 
 # 过滤 Filtering
