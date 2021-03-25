@@ -103,10 +103,6 @@ const genericRetryStrategy = ({
 
 下面，给出两种情况的示例。
 
-<code-group>
-
-<code-block label="当失败时重试整个 Observable 序列" active>
-
 1.当失败时重试整个 Observable 序列
 
 ```ts
@@ -168,10 +164,6 @@ error: 6
 We are done!
 6
 ```
-
-</code-block>
-
-<code-block label="当失败时，只重试前一步出错的步骤">
 
 2.当失败时，只重试前一步出错的步骤
 
@@ -252,10 +244,6 @@ We are done!
 We are done!
 11
 ```
-
-</code-block>
-
-</code-group>
 
 ## 源码
 

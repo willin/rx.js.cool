@@ -16,11 +16,11 @@ category: ''
 - fromEvent
 - fromEventPattern
 - generate
-- interval
+- [interval](/creation/interval)
 - [of](/creation/of) ⭐
 - range
 - throwError
-- timer
+- [timer](/creation/timer)
 - iif
 
 # 联合创建 Combination
@@ -86,7 +86,7 @@ category: ''
 - skipLast
 - skipUntil
 - skipWhile
-- take ⭐
+- [take](/filtering/take) ⭐
 - takeLast
 - takeUntil ⭐
 - takeWhile
@@ -142,8 +142,8 @@ category: ''
 # 实用方法 Utility
 
 - [tap](/utility/tap) ⭐
-- delay
-- delayWhen
+- [delay](/utility/delay)
+- [delayWhen](/utility/delayWhen)
 - dematerialize
 - finalize
 - materialize
