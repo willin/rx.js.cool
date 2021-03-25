@@ -111,14 +111,14 @@ category: ''
 - bufferTime ⭐
 - bufferToggle
 - bufferWhen
-- concatMap ⭐
+- [concatMap](/transformation/concatMap) ⭐
 - concatMapTo
 - count
 - expand
 - exhaust
 - exhaustMap
 - groupBy
-- map ⭐
+- [map](/transformation/map) ⭐
 - mapTo
 - mergeMap / flatMap ⭐
 - mergeMapTo
@@ -141,7 +141,7 @@ category: ''
 
 # 实用方法 Utility
 
-- tap ⭐
+- [tap](/utility/tap) ⭐
 - delay
 - delayWhen
 - dematerialize
