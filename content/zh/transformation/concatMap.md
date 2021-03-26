@@ -7,13 +7,13 @@ category: '转化操作符'
 
 <alert>
 
-将源值投射为一个 Observable 对象，其内部以串行的方式等待前一个完成再合并下一个 Observable。
+将源值投射为一个 Observable 序列，其内部以串行的方式等待前一个完成再合并下一个 Observable。
 
 </alert>
 
 ## 说明
 
-<ruby>遍历<rp>（</rp><rt>Map</rt><rp>）</rp></ruby> 每个值为 Observable 对象，然后使用 `concatAll` 展平所有 <ruby>内部<rp>（</rp><rt> Inner</rt><rp>）</rp></ruby> Observable 对象。
+<ruby>遍历<rp>（</rp><rt>Map</rt><rp>）</rp></ruby> 每个值为 Observable 序列，然后使用 `concatAll` 展平所有 <ruby>内部<rp>（</rp><rt> Inner</rt><rp>）</rp></ruby> Observable 序列。
 
 ## 用法
 

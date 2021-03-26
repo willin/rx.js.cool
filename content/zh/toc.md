@@ -56,7 +56,7 @@ category: ''
 
 # 异常处理 Error Handling
 
-- catchError ⭐
+- [catchError](/error/catchError) ⭐
 - [retry](/error/retry)
 - [retryWhen](/error/retryWhen)
 - throwIfEmpty
@@ -120,7 +120,7 @@ category: ''
 - groupBy
 - [map](/transformation/map) ⭐
 - mapTo
-- mergeMap / flatMap ⭐
+- [mergeMap / flatMap](/transformation/mergeMap) ⭐
 - mergeMapTo
 - mergeScan
 - partition
