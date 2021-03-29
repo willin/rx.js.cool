@@ -16,7 +16,7 @@ RxJS 是一个使用 <ruby>可观察<rp>（</rp><rt>Observable</rt><rp>）</rp><
 
 <alert>
 
-本系列文章更新时， RxJS 版本为： <badge>v6.6.6</badge>
+本系列文章更新时， RxJS 版本为： <badge>v6.6.7</badge> 和 <badge>v7.0.0-beta13</badge>
 
 </alert>
 
