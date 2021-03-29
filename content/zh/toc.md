@@ -125,7 +125,7 @@ category: ''
 - mergeScan
 - partition
 - pluck
-- reduce
+- [reduce](/transformation/reduce)
 - refCount
 - [scan](/transformation/scan) ⭐
 - switchAll
