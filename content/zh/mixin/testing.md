@@ -38,6 +38,12 @@ describe('CatsService', () => {
 
 ## 直接调用 Observable 的函数
 
+<alert type="danger">
+
+不推荐这样的方式定义和使用 Observable 对象。
+
+</alert>
+
 示例的函数代码：
 
 ```ts
@@ -58,6 +64,7 @@ export default function DemoTask(): void {
       console.error('Task Failed', err);
     }
   });
+  // 没有 return
 }
 ```
 
