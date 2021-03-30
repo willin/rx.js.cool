@@ -33,6 +33,8 @@ delay<T>(
 
 类型： `MonoTypeOperatorFunction<T>`
 
+<adsbygoogle></adsbygoogle>
+
 ## 示例
 
 ```ts

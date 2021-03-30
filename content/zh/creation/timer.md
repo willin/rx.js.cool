@@ -35,6 +35,8 @@ timer(
 
 类型： `Observable<T>`
 
+<adsbygoogle></adsbygoogle>
+
 ## 示例
 
 ### 当 timer 结束时投射一个值

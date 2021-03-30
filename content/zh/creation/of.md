@@ -29,6 +29,8 @@ of<T>(...args: (SchedulerLike | T)[]): Observable<T>
 
 类型： `Observable<T>`
 
+<adsbygoogle></adsbygoogle>
+
 ## 示例
 
 ### 投射一个序列

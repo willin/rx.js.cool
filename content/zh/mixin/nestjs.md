@@ -27,6 +27,8 @@ export class AppController {
 }
 ```
 
+<adsbygoogle></adsbygoogle>
+
 # Refs
 
 - 官方文档： https://docs.nestjs.com/interceptors

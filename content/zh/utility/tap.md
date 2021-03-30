@@ -37,6 +37,8 @@ tap<T>(
 
 类型： `MonoTypeOperatorFunction<T>`
 
+<adsbygoogle></adsbygoogle>
+
 ## 示例
 
 ### 打印日志数据

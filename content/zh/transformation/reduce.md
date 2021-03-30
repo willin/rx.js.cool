@@ -38,6 +38,8 @@ reduce<T, R>(
 
 类型： `OperatorFunction<T, T | R>`
 
+<adsbygoogle></adsbygoogle>
+
 ## 示例
 
 ### 数字流的加和

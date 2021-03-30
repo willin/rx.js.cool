@@ -36,6 +36,8 @@ describe('CatsService', () => {
 });
 ```
 
+<adsbygoogle></adsbygoogle>
+
 ## 直接调用 Observable 的函数
 
 <alert type="danger">

@@ -35,6 +35,8 @@ catchError<T, O extends ObservableInput<any>>(
 
 类型： `OperatorFunction<T, T | ObservedValueOf<O>>`
 
+<adsbygoogle></adsbygoogle>
+
 ## 示例
 
 ### 简单示例

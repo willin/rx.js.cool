@@ -30,6 +30,8 @@ interval(period: number = 0, scheduler: SchedulerLike = async): Observable<numbe
 
 类型： `Observable<T>`
 
+<adsbygoogle></adsbygoogle>
+
 ## 示例
 
 ```ts

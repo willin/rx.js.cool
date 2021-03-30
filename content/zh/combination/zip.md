@@ -35,6 +35,8 @@ zip<O extends ObservableInput<any>, R>(
 
 类型： `Observable<ObservedValueOf<O>[] | R>`
 
+<adsbygoogle></adsbygoogle>
+
 ## 示例
 
 ### 以交替的时间间隔对多个 Observables 进行 zip

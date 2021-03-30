@@ -37,6 +37,8 @@ scan<T, R>(
 
 类型： `OperatorFunction<T, R>`
 
+<adsbygoogle></adsbygoogle>
+
 ## 示例
 
 ### 总数累加

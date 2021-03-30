@@ -37,6 +37,8 @@ concatMap<T, R, O extends ObservableInput<any>>(
 
 类型： `OperatorFunction<T, ObservedValueOf<O> | R>`
 
+<adsbygoogle></adsbygoogle>
+
 ## 示例
 
 ### 与 `mergeMap` 区别比较

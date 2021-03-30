@@ -55,3 +55,5 @@ import { map } from 'rxjs/operators';
 
 of(1, 2, 3).pipe(map(x => x + '!!!')); // etc
 ```
+
+<adsbygoogle></adsbygoogle>

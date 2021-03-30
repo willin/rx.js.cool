@@ -33,6 +33,8 @@ export class CatPaginatorDto extends PaginatorQueryDto {
 }
 ```
 
+<adsbygoogle></adsbygoogle>
+
 实现部分代码：
 
 ```ts

@@ -36,6 +36,8 @@ from<T>(input: any, scheduler?: SchedulerLike): Observable<T>
 
 类型： `Observable<T>`
 
+<adsbygoogle></adsbygoogle>
+
 ## 示例
 
 ### 数组

@@ -42,6 +42,8 @@ forkJoin(...sources: any[]): Observable<any>
 
 类型： `Observable<any>`
 
+<adsbygoogle></adsbygoogle>
+
 ## 示例
 
 ### 简单示例

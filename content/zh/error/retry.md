@@ -34,6 +34,8 @@ retry<T>(count: number = -1): MonoTypeOperatorFunction<T>
 
 类型： `MonoTypeOperatorFunction<T>`
 
+<adsbygoogle></adsbygoogle>
+
 ## 示例
 
 ### 简单示例

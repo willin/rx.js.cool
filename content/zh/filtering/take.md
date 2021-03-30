@@ -38,6 +38,8 @@ take<T>(count: number): MonoTypeOperatorFunction<T>
 
 类型： `MonoTypeOperatorFunction<T>`
 
+<adsbygoogle></adsbygoogle>
+
 ## 示例
 
 ```ts

@@ -33,6 +33,8 @@ iif<T = never, F = never>(
 
 类型： `Observable<T>`
 
+<adsbygoogle></adsbygoogle>
+
 ## 示例
 
 ### 简单示例

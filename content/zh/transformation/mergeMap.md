@@ -50,6 +50,8 @@ mergeMap<T, R, O extends ObservableInput<any>>(
 
 类型： `OperatorFunction<T, R>`：从源 Observable 投射值执行 `project` 函数转换后的 Observable 序列。
 
+<adsbygoogle></adsbygoogle>
+
 ## 示例
 
 ### 遍历，打平
