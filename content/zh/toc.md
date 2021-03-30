@@ -116,7 +116,7 @@ category: ''
 - [concatMap](/transformation/concatMap) ⭐
 - concatMapTo
 - count
-- expand
+- [expand](/transformation/expand)
 - exhaust
 - exhaustMap
 - groupBy
