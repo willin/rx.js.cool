@@ -75,9 +75,22 @@ example.subscribe(val => console.log(`RESULT: ${val}`));
 
 ### Github 分页查询所有的数据
 
-封装调用方法：
+Github RESTful 接口调用[查询仓库](https://developer.github.com/v3/repos/#list-user-repositories)
 
-```ts
+```
+GET /users/willin/repos
+```
+
+[接口响应](https://developer.github.com/v3/repos/#response)的头信息里包含
+
+```
+Link: <https://api.github.com/user/1890238/repos?page=2>; rel="next",
+      <https://api.github.com/user/1890238/repos?page=3>; rel="last"
+```
+
+封装 Ajax 调用方法：
+
+```ts [get.ts]
 import { Observable } from 'rxjs';
 import { ajax, AjaxResponse } from 'rxjs/ajax';
 import { map } from 'rxjs/operators';
@@ -116,7 +129,7 @@ import { empty } from 'rxjs';
 import { concatMap, expand } from 'rxjs/operators';
 import { get } from './get';
 
-const url = 'https://api.github.com/users/sindresorhus/repos';
+const url = 'https://api.github.com/users/willin/repos';
 const repos = get(url).pipe(
   expand(({ next }) => (next ? get(next) : empty())),
   concatMap(({ content }) => content)
