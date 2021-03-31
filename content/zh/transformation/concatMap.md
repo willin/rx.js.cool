@@ -23,7 +23,7 @@ category: '转化操作符'
 concatMap<T, R, O extends ObservableInput<any>>(
   project: (value: T, index: number) => O,
   resultSelector?: (outerValue: T, innerValue: ObservedValueOf<O>, outerIndex: number, innerIndex: number) => R
-): OperatorFunction<T, ObservedValueOf<O> | R>nction<T, R>
+): OperatorFunction<T, ObservedValueOf<O> | R>
 ```
 
 ### 参数
