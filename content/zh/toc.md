@@ -154,6 +154,6 @@ category: ''
 - repeat
 - repeatWhen
 - timeInterval
-- timeout
+- [timeout](/utility/timeout)
 - timeoutWith
   <!-- - toPromise -->
