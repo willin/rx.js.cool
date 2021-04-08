@@ -82,7 +82,7 @@ subject.next({ favoriteLanguage: 'JavaScript' });
 import { interval } from 'rxjs';
 import { scan, map, distinctUntilChanged } from 'rxjs/operators';
 
-// 累加数组中的值，并随机发出此数组中的值
+// 累加数组中的值，并随机投射此数组中的值
 const scanObs = interval(1000)
   .pipe(
     scan((a, c) => [...a, c], []),

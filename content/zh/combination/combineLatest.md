@@ -44,18 +44,18 @@ combineLatest<O extends ObservableInput<any>, R>(
 ```ts
 import { timer, combineLatest } from 'rxjs';
 
-// timerOne 在1秒时发出第一个值，然后每4秒发送一次
+// timerOne 在1秒时投射第一个值，然后每4秒发送一次
 const timerOne = timer(1000, 4000);
-// timerTwo 在2秒时发出第一个值，然后每4秒发送一次
+// timerTwo 在2秒时投射第一个值，然后每4秒发送一次
 const timerTwo = timer(2000, 4000);
-// timerThree 在3秒时发出第一个值，然后每4秒发送一次
+// timerThree 在3秒时投射第一个值，然后每4秒发送一次
 const timerThree = timer(3000, 4000);
 
-// 当一个 timer 发出值时，将每个 timer 的最新值作为一个数组发出
+// 当一个 timer 投射值时，将每个 timer 的最新值作为一个数组投射
 const combined = combineLatest(timerOne, timerTwo, timerThree);
 
 combined.subscribe(latestValues => {
-  // 从 timerValOne、timerValTwo 和 timerValThree 中获取最新发出的值
+  // 从 timerValOne、timerValTwo 和 timerValThree 中获取最新投射的值
   const [timerValOne, timerValTwo, timerValThree] = latestValues;
   /*
     示例:
@@ -76,11 +76,11 @@ combined.subscribe(latestValues => {
 ```ts
 import { timer, combineLatest } from 'rxjs';
 
-// timerOne 在1秒时发出第一个值，然后每4秒发送一次
+// timerOne 在1秒时投射第一个值，然后每4秒发送一次
 const timerOne = timer(1000, 4000);
-// timerTwo 在2秒时发出第一个值，然后每4秒发送一次
+// timerTwo 在2秒时投射第一个值，然后每4秒发送一次
 const timerTwo = timer(2000, 4000);
-// timerThree 在3秒时发出第一个值，然后每4秒发送一次
+// timerThree 在3秒时投射第一个值，然后每4秒发送一次
 const timerThree = timer(3000, 4000);
 
 // combineLatest 还接收一个可选的 projection 函数

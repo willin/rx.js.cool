@@ -45,7 +45,7 @@ expand<T, R>(
 import { interval, of } from 'rxjs';
 import { expand, take } from 'rxjs/operators';
 
-// 发出 2
+// 投射 2
 const source = of(2);
 const example = source.pipe(
   // 递归调用提供的函数

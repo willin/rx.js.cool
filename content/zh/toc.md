@@ -34,10 +34,10 @@ category: ''
 
 - [combineAll / combineLatestAll](/combination/combineAll)
 - [combineLatest](/combination/combineLatest) ⭐
-- concat ⭐
+- [concat](/combination/concat) ⭐
 - concatAll
 - endWith
-- merge ⭐
+- [merge](/combination/merge) ⭐
 - mergeAll
 - pairwise
 - race
