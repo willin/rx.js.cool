@@ -150,7 +150,7 @@ category: ''
 - finalize
 - materialize
 - observeOn
-- onErrorResumeNext
+- [onErrorResumeNext](/utility/onErrorResumeNext)
 - repeat
 - repeatWhen
 - timeInterval
