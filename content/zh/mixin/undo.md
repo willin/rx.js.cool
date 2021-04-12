@@ -1,11 +1,11 @@
 ---
 title: undo
 description: ''
-position: 8800
-category: '进阶'
+position: 9020
+category: '项目中使用'
 ---
 
-示例运行：https://stackblitz.com/edit/rxjs-undo-operator-dnuced?file=index.ts
+示例运行：[https://stackblitz.com/edit/rxjs-undo-operator-dnuced](https://stackblitz.com/edit/rxjs-undo-operator-dnuced?devtoolsheight=100&file=index.ts)
 
 ```ts
 import { of, fromEvent, merge, Observable, EMPTY } from 'rxjs';

@@ -24,14 +24,14 @@ RxJS 是一个使用 <ruby>可观察<rp>（</rp><rt>Observable</rt><rp>）</rp><
   <code-block label="Yarn" active>
 
 ```bash
-yarn add rxjs
+yarn add v0 rxjs
 ```
 
   </code-block>
   <code-block label="NPM">
 
 ```bash
-npm install --save rxjs
+npm install --save v0 rxjs
 ```
 
   </code-block>
@@ -55,5 +55,11 @@ import { map } from 'rxjs/operators';
 
 of(1, 2, 3).pipe(map(x => x + '!!!')); // etc
 ```
+
+# 进阶操作符
+
+项目源码： <https://github.com/willin/v0> ，欢迎 Star。
+
+后续章节中会结合项目详细介绍这些操作符的进阶使用。
 
 <adsbygoogle></adsbygoogle>
