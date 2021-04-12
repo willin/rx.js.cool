@@ -13,6 +13,4 @@ category: ''
 
 本人保留所有权限，保留出版权限，未经本人书面许可任何人不得用于商业出版。
 
-![支付宝捐赠](https://cloud.githubusercontent.com/assets/1890238/15489630/fccbb9cc-2193-11e6-9fed-b93c59d6ef37.png)
-
-支付宝捐赠请扫码.
+![Donate](https://user-images.githubusercontent.com/1890238/59274374-cd594300-8c8c-11e9-8ee8-fe9be4b49cdb.png)

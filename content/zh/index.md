@@ -62,4 +62,8 @@ of(1, 2, 3).pipe(map(x => x + '!!!')); // etc
 
 后续章节中会结合项目详细介绍这些操作符的进阶使用。
 
+---
+
+欢迎关注和在 Github 上 Follow 我（[@willin](https://github.com/willin)）。
+
 <adsbygoogle></adsbygoogle>
