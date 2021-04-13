@@ -56,11 +56,11 @@ import { map } from 'rxjs/operators';
 of(1, 2, 3).pipe(map(x => x + '!!!')); // etc
 ```
 
-# 进阶操作符
+# 进阶
 
-项目源码： <https://github.com/willin/v0> ，欢迎 Star。
+后续章节中会结合项目详细介绍操作符、工具类等的进阶使用。
 
-后续章节中会结合项目详细介绍这些操作符的进阶使用。
+只要这么一本书， RxJS 从入门到精通。
 
 ---
 
