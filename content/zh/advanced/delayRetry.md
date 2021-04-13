@@ -54,6 +54,8 @@ Errored: 4
 ended
 ```
 
+<adsbygoogle></adsbygoogle>
+
 ## 可运行示例
 
 示例运行：[https://stackblitz.com/edit/rxjs-v0](https://stackblitz.com/edit/rxjs-v0?devtoolsheight=100&file=operators/delayRetry.ts)
