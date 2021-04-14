@@ -10,30 +10,22 @@ category: '进阶'
 示例代码：
 
 ```ts
-import { range, of, throwError } from 'rxjs';
-import { delayRetry } from 'v0';
-import { mergeMap, catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { tap, map } from 'rxjs/operators';
+import { tapAsync } from 'v0';
 
-const s$ = range(1, 5).pipe(
-  mergeMap(val => {
-    if (val > 3) {
-      return throwError(`Errored: ${val}`);
-    }
-    return of(val);
+const s$ = of(1, 2, 3, 4, 5, 6).pipe(
+  tapAsync(async x => {
+    await Promise.resolve(x);
+    console.log('tapAsync: origin', x);
   }),
-  delayRetry({
-    maxAttempts: 2, //重试两次，加原本执行一次，最多执行 3 次。
-    duration: 200
-  }),
-  catchError(error => of(error))
+  map(x => x ** 2),
+  tap(x => console.log('tapAsync: calc', x))
 );
 
 s$.subscribe({
-  next(v) {
-    console.log('delayRetry', v);
-  },
   complete() {
-    console.log('delayRetry ended');
+    console.log('tapAsync: ended');
   }
 });
 ```
@@ -41,16 +33,18 @@ s$.subscribe({
 输出：
 
 ```
-1
-2
-3
-1
-2
-3
-1
-2
-3
-Errored: 4
+origin 1
+origin 2
+origin 3
+origin 4
+origin 5
+origin 6
+calc 1
+calc 4
+calc 9
+calc 16
+calc 25
+calc 36
 ended
 ```
 
@@ -64,32 +58,29 @@ ended
 
 ## 实现
 
-使用 `retryWhen`、`mergeMap`、`timer` 实现：
+使用 `mergeMap` 实现：
 
 ```ts
-import { MonoTypeOperatorFunction, Observable, throwError, timer } from 'rxjs';
-import { mergeMap, retryWhen } from 'rxjs/operators';
+import { OperatorFunction } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
 
-export function delayRetry<T>({
-  maxAttempts = 3,
-  duration = 1000
-}: {
-  maxAttempts?: number;
-  duration?: number;
-} = {}): MonoTypeOperatorFunction<T> {
-  return retryWhen<T>(
-    (attempts: Observable<unknown>): Observable<unknown> =>
-      attempts.pipe(
-        mergeMap((error, i) => {
-          const retryAttempt = i + 1;
-          // 如果已经达到最大尝试次数
-          if (retryAttempt > maxAttempts) {
-            return throwError(error);
-          }
-          // 1s, 2s, ... 后重试
-          return timer(retryAttempt * duration);
-        })
-      )
-  );
+/**
+ * tapAsync
+ * @param fn Async Function
+ *
+ * const s$ = of(1, 2, 3, 4, 5, 6).pipe(
+ * tapAsync(async x => {
+ *   await Promise.resolve(x);
+ *   console.log(x);
+ * }),
+ * map(x => x ** 2),
+ * tap(x => console.log("calced", x))
+ * );
+ */
+export function tapAsync<T>(fn: (x: T) => Promise<void | void | never>): OperatorFunction<T, T> {
+  return mergeMap(async (x: T) => {
+    await fn(x);
+    return x;
+  });
 }
 ```
