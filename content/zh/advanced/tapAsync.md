@@ -1,5 +1,5 @@
 ---
-title: delayRetry
+title: tapAsync
 description: ''
 position: 8800
 category: '进阶'
@@ -10,22 +10,30 @@ category: '进阶'
 示例代码：
 
 ```ts
-import { of } from 'rxjs';
-import { tap, map } from 'rxjs/operators';
-import { tapAsync } from 'v0';
+import { range, of, throwError } from 'rxjs';
+import { delayRetry } from 'v0';
+import { mergeMap, catchError } from 'rxjs/operators';
 
-const s$ = of(1, 2, 3, 4, 5, 6).pipe(
-  tapAsync(async x => {
-    await Promise.resolve(x);
-    console.log('tapAsync: origin', x);
+const s$ = range(1, 5).pipe(
+  mergeMap(val => {
+    if (val > 3) {
+      return throwError(`Errored: ${val}`);
+    }
+    return of(val);
   }),
-  map(x => x ** 2),
-  tap(x => console.log('tapAsync: calc', x))
+  delayRetry({
+    maxAttempts: 2, //重试两次，加原本执行一次，最多执行 3 次。
+    duration: 200
+  }),
+  catchError(error => of(error))
 );
 
 s$.subscribe({
+  next(v) {
+    console.log('delayRetry', v);
+  },
   complete() {
-    console.log('tapAsync: ended');
+    console.log('delayRetry ended');
   }
 });
 ```
@@ -33,18 +41,16 @@ s$.subscribe({
 输出：
 
 ```
-origin 1
-origin 2
-origin 3
-origin 4
-origin 5
-origin 6
-calc 1
-calc 4
-calc 9
-calc 16
-calc 25
-calc 36
+1
+2
+3
+1
+2
+3
+1
+2
+3
+Errored: 4
 ended
 ```
 
@@ -58,29 +64,32 @@ ended
 
 ## 实现
 
-使用 `mergeMap` 实现：
+使用 `retryWhen`、`mergeMap`、`timer` 实现：
 
 ```ts
-import { OperatorFunction } from 'rxjs';
-import { mergeMap } from 'rxjs/operators';
+import { MonoTypeOperatorFunction, Observable, throwError, timer } from 'rxjs';
+import { mergeMap, retryWhen } from 'rxjs/operators';
 
-/**
- * tapAsync
- * @param fn Async Function
- *
- * const s$ = of(1, 2, 3, 4, 5, 6).pipe(
- * tapAsync(async x => {
- *   await Promise.resolve(x);
- *   console.log(x);
- * }),
- * map(x => x ** 2),
- * tap(x => console.log("calced", x))
- * );
- */
-export function tapAsync<T>(fn: (x: T) => Promise<void | void | never>): OperatorFunction<T, T> {
-  return mergeMap(async (x: T) => {
-    await fn(x);
-    return x;
-  });
+export function delayRetry<T>({
+  maxAttempts = 3,
+  duration = 1000
+}: {
+  maxAttempts?: number;
+  duration?: number;
+} = {}): MonoTypeOperatorFunction<T> {
+  return retryWhen<T>(
+    (attempts: Observable<unknown>): Observable<unknown> =>
+      attempts.pipe(
+        mergeMap((error, i) => {
+          const retryAttempt = i + 1;
+          // 如果已经达到最大尝试次数
+          if (retryAttempt > maxAttempts) {
+            return throwError(error);
+          }
+          // 1s, 2s, ... 后重试
+          return timer(retryAttempt * duration);
+        })
+      )
+  );
 }
 ```
