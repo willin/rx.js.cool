@@ -151,7 +151,7 @@ category: ''
 - materialize
 - observeOn
 - [onErrorResumeNext](/utility/onErrorResumeNext)
-- repeat
+- [repeat](/utility/repeat)
 - repeatWhen
 - timeInterval
 - [timeout](/utility/timeout)
