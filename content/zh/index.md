@@ -24,14 +24,14 @@ RxJS 是一个使用 <ruby>可观察<rp>（</rp><rt>Observable</rt><rp>）</rp><
   <code-block label="Yarn" active>
 
 ```bash
-yarn add v0 rxjs
+yarn add rxjs reflect-metadata v0
 ```
 
   </code-block>
   <code-block label="NPM">
 
 ```bash
-npm install --save v0 rxjs
+npm install --save rxjs reflect-metadata v0
 ```
 
   </code-block>
@@ -53,7 +53,7 @@ rxjs.of(1, 2, 3);
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-of(1, 2, 3).pipe(map(x => x + '!!!')); // etc
+of(1, 2, 3).pipe(map((x) => x + '!!!')); // etc
 ```
 
 ## 进阶
