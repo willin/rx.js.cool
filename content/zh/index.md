@@ -6,17 +6,17 @@ position: 1
 category: ''
 ---
 
-# 介绍
+## 介绍
 
 RxJS 是一个使用 <ruby>可观察<rp>（</rp><rt>Observable</rt><rp>）</rp></ruby> 序列来编写异步和 <ruby>基于事件<rp>（</rp><rt>Event-based</rt><rp>）</rp></ruby> 程序的库。
 
 它提供了一种核心类型，即 [Observable](#)，附属类型（Observer，Scheduler，Subject）和受 `Array`（还有 map、filter、reduce、every 等） 启发的 <ruby>运算符<rp>（</rp><rt>Operators</rt><rp>）</rp></ruby>，以允许将异步事件作为集合进行处理。
 
-# 安装
+## 安装
 
 <alert>
 
-本系列文章更新时， RxJS 版本为： <badge>v6.6.7</badge> 和 <badge>v7.0.0-beta15</badge>
+本系列文章更新时， RxJS 版本为： <badge>v6.6.7</badge> 和 <badge>7.0.0-rc.3</badge>
 
 </alert>
 
@@ -37,7 +37,7 @@ npm install --save v0 rxjs
   </code-block>
 </code-group>
 
-# 使用
+## 使用
 
 导入整个核心功能集：
 
@@ -56,7 +56,7 @@ import { map } from 'rxjs/operators';
 of(1, 2, 3).pipe(map(x => x + '!!!')); // etc
 ```
 
-# 进阶
+## 进阶
 
 后续章节中会结合项目详细介绍操作符、工具类等的进阶使用。
 
