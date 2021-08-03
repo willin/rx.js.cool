@@ -16,7 +16,7 @@ RxJS 是一个使用 <ruby>可观察<rp>（</rp><rt>Observable</rt><rp>）</rp><
 
 <alert>
 
-本系列文章更新时， RxJS 版本为： <badge>v6.6.7</badge> 和 <badge>7.0.0-rc.3</badge>
+本系列文章更新时， RxJS 版本为： <badge>v7.3.0</badge>
 
 </alert>
 
@@ -53,7 +53,7 @@ rxjs.of(1, 2, 3);
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-of(1, 2, 3).pipe(map((x) => x + '!!!')); // etc
+of(1, 2, 3).pipe(map(x => x + '!!!')); // etc
 ```
 
 ## 进阶

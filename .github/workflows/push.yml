@@ -2,7 +2,7 @@ name: Generate rx.js.cool
 
 on:
   push:
-    branches: master
+    branches: main
 
 jobs:
   build:
@@ -23,8 +23,8 @@ jobs:
         run: |-
           git config --global user.email "i@js.cool" && git config --global user.name "Github Bot"
           cd dist
-          git init
+          git init -b main
           git add . && git commit -m ":memo: Auto Generate" || exit 0
-          git push --force "https://${GH_TOKEN}@github.com/willin/rx.js.cool.git" master:gh-pages
+          git push --force "https://${GH_TOKEN}@github.com/willin/rx.js.cool.git" main:gh-pages
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
