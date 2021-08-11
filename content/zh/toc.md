@@ -7,7 +7,7 @@ category: ''
 
 ## 创建操作 Creation
 
-- ajax ⭐
+- [ajax](/creation/ajax) ⭐
 - bindCallback
 - bindNodeCallback
 - defer
