@@ -1,0 +1,11 @@
+{
+  "name": "RxJS教程",
+  "short_name": "rx.js.cool",
+  "description": "<https://rx.js.cool>",
+  "icons": [],
+  "start_url": "/?standalone=true",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#00CD81",
+  "lang": "en"
+}
